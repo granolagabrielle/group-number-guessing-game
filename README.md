@@ -10,12 +10,17 @@ In this challenge, you will be creating a number guessing game! You'll have plen
 
 You should generate a random number between 1 and 25 on the server. Add input fields to match the number of people in your group. Each member of your group will submit a guess at the same time. All of the guesses should be sent to the server (POST). The server will check each guess against the random number. After submitting a round of guesses, retrieve all of the previous guesses (GET) and display them on the screen. Let each user know whether their guess was correct, too low or too high. 
 
-- an input field for each of the Players to make a guess
-- a submit guesses button (submits all guesses at the same time)
-- total guesses made indicator (think of this as rounds in a game)
-- details area for the history of guesses for each player (tell them if their last guess was too low or too high)
-- if a guess is correct PROMINENTLY Display which player won (make 'em FEEL it)
-- if there is a winner, a restart button that tells the server to select a new random number (POST)
+[X] an input field for each of the Players to make a guess
+[X] a submit guesses button (submits all guesses at the same time)
+[] total guesses made indicator (think of this as rounds in a game)
+[X] details area for the history of guesses for each player (tell them if their last guess was too low or too high)
+[] if a guess is correct PROMINENTLY Display which player won (make 'em FEEL it)
+[] if there is a winner, a restart button that tells the server to select a new random number (POST)
+
+Friday:
+- research delete function/clear button
+- fix counter
+- add display for winner
 
 # Necessary Ingredients (AKA Client Demands)
 
