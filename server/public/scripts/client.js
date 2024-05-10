@@ -4,6 +4,7 @@ function onReady() {
 }
 
 onReady();
+
 let guessesMade = document.getElementById('guesses-made');
 
 function guessHandler(event) {
@@ -12,9 +13,6 @@ function guessHandler(event) {
   const loganGuess = document.getElementById('logan-guess').value;
   const gabrielleGuess = document.getElementById('gabrielle-guess').value;
   const adamGuess = document.getElementById('adam-guess').value;
-  // Number(loganGuess);
-  // Number(gabrielleGuess);
-  // Number(adamGuess);
 
   axios({
     method: 'POST',
@@ -33,13 +31,14 @@ function guessHandler(event) {
   document.getElementById('logan-guess').value = '';
   document.getElementById('gabrielle-guess').value = '';
   document.getElementById('adam-guess').value = '';
+  // guessCounter();
+  guessPost();
 }
 
 function fetchGuesses() {
   axios
     .get('/guesses')
     .then((response) => {
-      const restartButton = document.getElementById('restart-button');
       const tableBody = document.getElementById('guessHistoryTable');
       tableBody.innerHTML = '';
       for (let i = 0; i < response.data.length; i++) {
@@ -63,7 +62,7 @@ function fetchGuesses() {
         }
         if (guess.adamResult === 'Correct!') {
           const adamGuess = document.getElementById(`adam${i}`);
-          adamGuess.style.backgroundColor = 'green';
+          adamGuess.style.backgroundColor = 'goldenrod';
           adamGuess.style.fontWeight = 'bolder';
         }
       }
@@ -72,6 +71,7 @@ function fetchGuesses() {
       console.log(error);
       alert('Something is not right, check the console.');
     });
+  guessCounter();
 }
 
 function guessCounter() {
@@ -88,6 +88,19 @@ function guessCounter() {
     });
 }
 
+// function guessPost() {
+//   axios
+//     .post('/guessesMade')
+//     .then((response) => {
+//       const guessesMade = document.getElementById('guesses-made');
+//       console.log('Game:', response.data);
+//       guessesMade.innerHTML = response.data;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       alert('Something went wrong, check the console');
+//     });
+// }
 // function removePlayerGuess(event) {
 
 // }

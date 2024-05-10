@@ -6,6 +6,7 @@ const PORT = 5001;
 // This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({ extended: true }));
+
 // Serve up static files (HTML, CSS, Client JS)
 app.use(express.static('server/public'));
 
@@ -68,6 +69,7 @@ app.post('/guesses', (req, res) => {
   console.log(result.loganGuess);
   console.log(result.gabrielleGuess);
   console.log(result.adamGuess);
+  guessesMade += 1;
 
   // res.send(result);
 
@@ -78,13 +80,11 @@ app.post('/guesses', (req, res) => {
 
 // POST for guess counter
 // app.post('/guessesMade', (req, res) => {
-//   guessesMade++;
-//   res.status(201).send(guessesMade);
+//   res.send(`${guessesMade}`);
 // });
 
 app.get('/guessesMade', (req, res) => {
-  guessesMade++;
-  res.status(201).send(guessesMade);
+  res.send(`${guessesMade}`);
 });
 
 // GET to retrieve all previous guesses
