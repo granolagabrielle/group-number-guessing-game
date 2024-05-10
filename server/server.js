@@ -79,9 +79,9 @@ app.post('/guesses', (req, res) => {
 });
 
 // POST for guess counter
-// app.post('/guessesMade', (req, res) => {
-//   res.send(`${guessesMade}`);
-// });
+app.post('/guessesMade', (req, res) => {
+  res.send(`${guessesMade}`);
+});
 
 app.get('/guessesMade', (req, res) => {
   res.send(`${guessesMade}`);

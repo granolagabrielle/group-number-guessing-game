@@ -88,19 +88,19 @@ function guessCounter() {
     });
 }
 
-// function guessPost() {
-//   axios
-//     .post('/guessesMade')
-//     .then((response) => {
-//       const guessesMade = document.getElementById('guesses-made');
-//       console.log('Game:', response.data);
-//       guessesMade.innerHTML = response.data;
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       alert('Something went wrong, check the console');
-//     });
-// }
+function guessPost() {
+  axios
+    .post('/guessesMade')
+    .then((response) => {
+      const guessesMade = document.getElementById('guesses-made');
+      console.log('Game:', response.data);
+      guessesMade.innerHTML = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+      alert('Something went wrong, check the console');
+    });
+}
 // function removePlayerGuess(event) {
 
 // }
