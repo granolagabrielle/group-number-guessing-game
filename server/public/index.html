@@ -13,23 +13,24 @@
   <body>
     <h1>Gabrielle's Guessing Game</h1>
     <form onsubmit="guessHandler(event)">
-      <input id="player-name" placeholder="Enter your name" required />
-      <input type="number" id="player-guess" placeholder="Enter your guess!" required />
+      <input type="number" id="logan-guess" placeholder="Logan's Guess"  />
+      <input type="number" id="gabrielle-guess" placeholder="Gabrielle's Guess"  />
+      <input type="number" id="adam-guess" placeholder="Adam's Guess" >
       <button>Check Guess</button>
     </form>
     <h2>Total Guesses Made: <span id="guesses-made">0</span></h2>
     <h3>Guess History</h3>
     <table>
       <tr>
-        <th>Player</th>
-        <th>Guess</th>
-        <th>Result</th>
+        <th>Logan's Guess</th>
+        <th>Gabrielle's Guess</th>
+        <th>Adam's Guess</th>
       </tr>
       <div id="restart-button"></div>
       <tbody id="guessHistoryTable">
 
       </tbody>
     </table>
-    <!-- <button id=restart-button></button> -->
+    <button onClick = "resetGame(event)">Reset</button>
   </body>
 </html>
